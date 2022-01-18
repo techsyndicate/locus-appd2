@@ -25,7 +25,7 @@ class NotificationService {
   }
 
   Future<void> scheduleNotification(String name, DateTime dateTime) async {
-    await flutterLocalNotificationsPlugin.zonedSchedule(0, name, 'Reminder to take ' + name + '!', dateTime, NotificationDetails(android: AndroidNotificationDetails('remediid', 'remedi', 'notifications for remedi', importance: Importance.high, priority: Priority.high, ticker: 'ticker')), uiLocalNotificationDateInterpretation: UILocalNotificationDateInterpretation.absoluteTime, androidAllowWhileIdle: true);
+    await flutterLocalNotificationsPlugin.zonedSchedule(0, name, 'Reminder to take ' + name + '!', tz.TZDateTime.from(dateTime, tz.local), NotificationDetails(android: AndroidNotificationDetails('remediid', 'remedi', 'notifications for remedi', importance: Importance.high, priority: Priority.high, ticker: 'ticker')), uiLocalNotificationDateInterpretation: UILocalNotificationDateInterpretation.absoluteTime, androidAllowWhileIdle: true);
   }
 
   NotificationService._internal();

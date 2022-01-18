@@ -91,7 +91,7 @@ class _WelcomeState extends State<Welcome> {
                                   child: Tab(icon: Image.asset('assets/pill.png')),
                               ),
                               title: Text(reminders[index]['name'], style: TextStyle(fontSize: 20.0)),
-                              subtitle: Text(DateFormat('h:mm a').format(reminders[index]['time']) + ' | ' + reminders[index]['recurring'], style: TextStyle(fontSize: 18.0))
+                              subtitle: Text(DateFormat('hh:mm a').format(DateTime.parse(reminders[index]['time'])) + ' | ' + reminders[index]['recurring'], style: TextStyle(fontSize: 18.0))
                             ),
                           ),
                         );
